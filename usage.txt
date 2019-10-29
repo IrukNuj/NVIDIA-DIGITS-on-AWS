@@ -1,0 +1,12 @@
+(ペースト。publicにあたって不味い記述があったら連絡下さい)
+
+1. Choose instance type depending on training performance needs (e.g. p2.xlarge)
+2. Ensure the port xxxx is open (this is already setup if using the default security group settings under 1-Click Launch) 
+3. Open a browser and type the public IP address of the instance at port xxxx (e.g. http://xxx.xxx.xxx.xxx:xxxx/  ) to get the DIGITS UI
+4. Datasets can be mounted under /home/digits/data before using DIGITS to train your neural network
+5. Note that "/home/digits/data" and "/home/digits/jobs" have been mounted as "/data" and "/jobs" respectively inside the DIGITS container. If you have mounted your dataset under /home/digits/data, then you should specify "/data" as the "Image Folder" in the DIGITS UI
+
+To install the CUDA Toolkit, open an SSH terminal to the instance and install CUDA using the package manager as shown below:
+$ sudo apt-get install cuda-toolkit-9-0
+
+For more information, visit GPU-Accelerated Cloud Images (https://developer.nvidia.com/gpu-cloud-images)
